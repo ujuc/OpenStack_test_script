@@ -64,7 +64,7 @@ keystone service-create --name=ec2 --type=ec2 --description="EC2 Service"
 keystone service-create --name=quantum --type=network --description="Quantum Service"
 
 # list view
-#keystone tenant-list
-#keystone user-list
-#keystone role-list
-#keystone service-list
+keystone tenant-list
+keystone user-list
+keystone role-list
+keystone service-list
