@@ -20,8 +20,8 @@ SERVICE_TENANT=$(get_id keystone tenant-create --name=$SERVICE_TENANT_NAME)
 DEMO_TENANT=$(get_id keystone tenant-create --name=demo)
 
 # Users
-ADMIN_USER=$(get_id keystone user-create --name=admin --pass="$ADMIN_PASSWORD" --email=admin@domain.com)
-DEMO_USER=$(get_id keystone user-create --name=demo --pass="$ADMIN_PASSWORD" --email=demo@domain.com)
+ADMIN_USER=$(get_id keystone user-create --name=admin --pass="$ADMIN_PASSWORD" --email=admin@foo.kr)
+DEMO_USER=$(get_id keystone user-create --name=demo --pass="$ADMIN_PASSWORD" --email=demo@foo.kr)
 
 # Roles
 ADMIN_ROLE=$(get_id keystone role-create --name=admin)
@@ -39,29 +39,28 @@ MEMBER_ROLE=$(get_id keystone role-create --name=Member)
 keystone user-role-add --user $DEMO_USER --role $MEMBER_ROLE --tenant_id $DEMO_TENANT
 
 # Configure service users/roles
-NOVA_USER=$(get_id keystone user-create --name=nova --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=nova@domain.com)
+NOVA_USER=$(get_id keystone user-create --name=nova --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=nova@foo.kr)
 keystone user-role-add --tenant_id $SERVICE_TENANT --user $NOVA_USER --role $ADMIN_ROLE
 
-GLANCE_USER=$(get_id keystone user-create --name=glance --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=glance@domain.com)
+GLANCE_USER=$(get_id keystone user-create --name=glance --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=glance@foo.kr)
 keystone user-role-add --tenant_id $SERVICE_TENANT --user $GLANCE_USER --role $ADMIN_ROLE
 
-SWIFT_USER=$(get_id keystone user-create --name=swift --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=swift@domain.com)
+SWIFT_USER=$(get_id keystone user-create --name=swift --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=swift@foo.kr)
 keystone user-role-add --tenant_id $SERVICE_TENANT --user $SWIFT_USER --role $ADMIN_ROLE
 
 RESELLER_ROLE=$(get_id keystone role-create --name=ResellerAdmin)
 keystone user-role-add --tenant_id $SERVICE_TENANT --user $NOVA_USER --role $RESELLER_ROLE
 
-# If you want to use Quantum with Keystone (not stable in Essex)
-QUANTUM_USER=$(get_id keystone user-create --name=quantum --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=quantum@domain.com)
+QUANTUM_USER=$(get_id keystone user-create --name=quantum --pass="$SERVICE_PASSWORD" --tenant_id $SERVICE_TENANT --email=quantum@foo.kr)
 keystone user-role-add --tenant_id $SERVICE_TENANT --user $QUANTUM_USER --role $ADMIN_ROLE
 
 # Sevices
-keystone service-create --name=nova --type=compute --description="Compute Service"
-keystone service-create --name=volume --type=volume --description="Volume Service"
-keystone service-create --name=glance --type=image --description="Image Service"
-keystone service-create --name=swift --type=object-store --description="Storage Service"
+keystone service-create --name=nova --type=compute --description="OpenStack Compute Service"
+keystone service-create --name=volume --type=volume --description="OpenStack Volume Service"
+keystone service-create --name=glance --type=image --description="OpenStack Image Service"
+keystone service-create --name=swift --type=object-store --description="OpenStack Storage Service"
+keystone service-create --name=quantum --type=network --description="OpenStack Network Service"
 keystone service-create --name=ec2 --type=ec2 --description="EC2 Service"
-keystone service-create --name=quantum --type=network --description="Quantum Service"
 
 # list view
 keystone tenant-list
