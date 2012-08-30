@@ -59,13 +59,13 @@ keystone user-role-add --tenant-id $SERVICE_TENANT --user-id $QUANTUM_USER --rol
 #keystone user-role-add --tenant_id $SERVICE_TENANT --user $QUANTUM_USER --role $ADMIN_ROLE
 
 # Sevices
-SERVICE_NOVA=$(get_id keystone service-create --name nova --type compute --description "OpenStack Compute Service")
-SERVICE_VOLUME=$(get_id keystone service-create --name volume --type volume --description "OpenStack Volume Service")
-SERVICE_GLANCE=$(get_id keystone service-create --name glance --type image --description "OpenStack Image Service")
-SERVICE_SWIFT=$(get_id keystone service-create --name swift --type object-store --description "OpenStack Storage Service")
-SERVICE_KEYSTONE=$(get_id keystone service-create --name keystone --type identity --description="OpenStack Identity Service")
-SERVICE_QUANTUM=$(get_id keystone service-create --name=quantum --type=network --description="OpenStack Network Service")
-SERVICE_EC2=$(get_id keystone service-create --name=ec2 --type=ec2 --description="EC2 Service")
+SERVICE_NOVA=$(get_id keystone service-create --name nova --type compute --description 'OpenStack Compute Service')
+SERVICE_VOLUME=$(get_id keystone service-create --name volume --type volume --description 'OpenStack Volume Service')
+SERVICE_GLANCE=$(get_id keystone service-create --name glance --type image --description 'OpenStack Image Service')
+SERVICE_SWIFT=$(get_id keystone service-create --name swift --type object-store --description 'OpenStack Storage Service')
+SERVICE_KEYSTONE=$(get_id keystone service-create --name keystone --type identity --description='OpenStack Identity Service')
+SERVICE_QUANTUM=$(get_id keystone service-create --name=quantum --type=network --description='OpenStack Network Service')
+SERVICE_EC2=$(get_id keystone service-create --name=ec2 --type=ec2 --description='EC2 Service')
 
 # list view
 keystone tenant-list
