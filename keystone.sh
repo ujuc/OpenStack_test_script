@@ -59,60 +59,16 @@ keystone user-role-add --tenant-id $SERVICE_TENANT --user-id $QUANTUM_USER --rol
 #keystone user-role-add --tenant_id $SERVICE_TENANT --user $QUANTUM_USER --role $ADMIN_ROLE
 
 # Sevices
-S_NOVA=$(get_id keystone service-create --name nova --type compute \
---description "OpenStack Compute Service")
-S_VOLUME=$(get_id keystone service-create --name volume --type volume \
---description "OpenStack Volume Service")
-S_GLANCE=$(get_id keystone service-create --name glance --type image \
---description "OpenStack Image Service")
-S_SWIFT=$(get_id keystone service-create --name swift --type object-store \
---description "OpenStack Storage Service")
-S_KEYSTONE=$(get_id keystone service-create --name keystone --type identity \
---description="OpenStack Identity Service")
-S_QUANTUM=$(get_id keystone service-create --name=quantum --type=network \
---description="OpenStack Network Service")
-S_EC2=$(get_id keystone service-create --name=ec2 --type=ec2 \
---description="EC2 Service")
+keystone service-create --name nova --type compute --description "OpenStack Compute Service"
+keystone service-create --name volume --type volume --description "OpenStack Volume Service"
+keystone service-create --name glance --type image --description "OpenStack Image Service"
+keystone service-create --name swift --type object-store --description "OpenStack Storage Service"
+keystone service-create --name keystone --type identity --description="OpenStack Identity Service"
+keystone service-create --name=quantum --type=network --description="OpenStack Network Service"
+keystone service-create --name=ec2 --type=ec2 --description="EC2 Service"
 
 # list view
 keystone tenant-list
 keystone user-list
 keystone role-list
 keystone service-list
-
-# Endpoint 
-# Edit Server ip
-keystone endpoint-create --region myregion --service-id $S_NOVA \
---publicurl 'http://192.168.122.133:8774/v2/$(tenant_id)s' \
---adminurl 'http://192.168.122.133:8774/v2/$(tenant_id)s' \
---internalurl 'http://192.168.122.133:8774/v2/$(tenant_id)s'
-
-keystone endpoint-create --region myregion --service-id $S_VOLUME \
---publicurl 'http://192.168.122.133:8776/v1/$(tenant_id)s' \
---adminurl 'http://192.168.122.133:8776/v1/$(tenant_id)s' \
---internalurl 'http://192.168.122.133:8776/v1/$(tenant_id)s'
-
-keystone endpoint-create --region myregion --service-id $S_GLANCE \
---publicurl 'http://192.168.122.133:9292/v1' \
---adminurl 'http://192.168.122.133:9292/v1' \
---internalurl 'http://192.168.122.133:9292/v1'
-
-keystone endpoint-create --region myregion --service-id $S_SWIFT \
---publicurl 'http://192.168.122.133:8080/v1/AUTH_$(tenant_id)s' \
---adminurl 'http://192.168.122.133:8080/v1' \
---internalurl 'http://192.168.122.133:8080/v1/AUTH_$(tenant_id)s'
-
-keystone endpoint-create --region myregion --service-id $S_KEYSTONE \
---publicurl 'http://192.168.122.133:5000/v1' \
---adminurl 'http://192.168.122.133:35357/v2.0' \
---internalurl 'http://192.168.122.133:5000/2.0'
-
-keystone endpoint-create --region myregion --service-id $S_QUANTUM \
---publicurl 'http://192.168.122.133:9696/' \
---adminurl 'http://192.168.122.133:9696/' \
---internalurl 'http://192.168.122.133:9696/'
-
-keystone endpoint-create --region myregion --service-id $S_EC2 \
---publicurl 'http://192.168.122.133:8773/services/Cloud' \
---adminurl 'http://192.168.122.133:8773/services/Admin' \
---internalurl 'http://192.168.122.133:8773/services/Cloud'
