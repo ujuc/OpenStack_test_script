@@ -1,0 +1,36 @@
+# Endpoint 
+# Edit Server ip, service id
+keystone endpoint-create --region myregion --service-id 094f301ce64c4214b2ae02e90ed20340 \
+--publicurl 'http://192.168.122.133:8774/v2/$(tenant_id)s' \
+--adminurl 'http://192.168.122.133:8774/v2/$(tenant_id)s' \
+--internalurl 'http://192.168.122.133:8774/v2/$(tenant_id)s'
+
+keystone endpoint-create --region myregion --service-id b7f9a6a838b940c18f0b54555f7af4a5 \
+--publicurl 'http://192.168.122.133:8776/v1/$(tenant_id)s' \
+--adminurl 'http://192.168.122.133:8776/v1/$(tenant_id)s' \
+--internalurl 'http://192.168.122.133:8776/v1/$(tenant_id)s'
+
+keystone endpoint-create --region myregion --service-id 24531925893844369ed9a1007230c915 \
+--publicurl 'http://192.168.122.133:9292/v1' \
+--adminurl 'http://192.168.122.133:9292/v1' \
+--internalurl 'http://192.168.122.133:9292/v1'
+
+keystone endpoint-create --region myregion --service-id 5bfb030d0f004981a348f1c795f031c8 \
+--publicurl 'http://192.168.122.133:8080/v1/AUTH_$(tenant_id)s' \
+--adminurl 'http://192.168.122.133:8080/v1' \
+--internalurl 'http://192.168.122.133:8080/v1/AUTH_$(tenant_id)s'
+
+keystone endpoint-create --region myregion --service-id ce1084af74244e77ba1d34f816f1b02d \
+--publicurl 'http://192.168.122.133:5000/v1' \
+--adminurl 'http://192.168.122.133:35357/v2.0' \
+--internalurl 'http://192.168.122.133:5000/2.0'
+
+keystone endpoint-create --region myregion --service-id 3b70a9457e034a6b870b6d57b7b257e4 \
+--publicurl 'http://192.168.122.133:9696/' \
+--adminurl 'http://192.168.122.133:9696/' \
+--internalurl 'http://192.168.122.133:9696/'
+
+keystone endpoint-create --region myregion --service-id fd0c00b1024f49e786323c174b013b4e \
+--publicurl 'http://192.168.122.133:8773/services/Cloud' \
+--adminurl 'http://192.168.122.133:8773/services/Admin' \
+--internalurl 'http://192.168.122.133:8773/services/Cloud'
