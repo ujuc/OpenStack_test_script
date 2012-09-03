@@ -68,7 +68,11 @@ keystone service-create --name=quantum --type=network --description="OpenStack N
 keystone service-create --name=ec2 --type=ec2 --description="EC2 Service"
 
 # list view
+echo "tenant list"
 keystone tenant-list
+echo "user list"
 keystone user-list
+echo "role-list"
 keystone role-list
+echo "service list"
 keystone service-list
