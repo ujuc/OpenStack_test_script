@@ -10,7 +10,7 @@
 # Endpoint setting
 # NOT used '#' add
 
-ADMIN_PASSWORD=${ADMIN_PASSWORD:-passwd}
+#ADMIN_PASSWORD=${ADMIN_PASSWORD:-passwd}
 SERVICE_PASSWORD=${SERVICE_PASSWORD:-$ADMIN_PASSWORD}
 SERVICE_TENANT_NAME=${SERVICE_TENANT_NAME:-service}
 
@@ -24,13 +24,13 @@ SERVICE_TENANT=$(get_id keystone tenant-create --name $SERVICE_TENANT_NAME)
 DEMO_TENANT=$(get_id keystone tenant-create --name demo)
 
 # Users
-ADMIN_USER=$(get_id keystone user-create --name admin --pass "$ADMIN_PASSWORD" --email admin@foo.kr)
-DEMO_USER=$(get_id keystone user-create --name demo --pass "$ADMIN_PASSWORD" --email demo@foo.kr)
+ADMIN_USER=$(get_id keystone user-create --name admin --pass admin --email admin@foo.kr)
+DEMO_USER=$(get_id keystone user-create --name demo --pass demo --email demo@foo.kr)
 
-NOVA_USER=$(get_id keystone user-create --name nova --pass "$SERVICE_PASSWORD" --email nova@foo.kr)
-GLANCE_USER=$(get_id keystone user-create --name glance --pass "$SERVICE_PASSWORD"  --email glance@foo.kr)
-SWIFT_USER=$(get_id keystone user-create --name swift --pass "$SERVICE_PASSWORD" --email=swift@foo.kr)
-QUANTUM_USER=$(get_id keystone user-create --name quantum --pass "$SERVICE_PASSWORD" --email=quantum@foo.kr)
+NOVA_USER=$(get_id keystone user-create --name nova --pass nova --email nova@foo.kr)
+GLANCE_USER=$(get_id keystone user-create --name glance --pass glance  --email glance@foo.kr)
+SWIFT_USER=$(get_id keystone user-create --name swift --pass swift --email=swift@foo.kr)
+QUANTUM_USER=$(get_id keystone user-create --name quantum --pass quantum --email=quantum@foo.kr)
 
 # Roles
 ADMIN_ROLE=$(get_id keystone role-create --name=admin)
