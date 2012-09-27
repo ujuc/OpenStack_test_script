@@ -7,7 +7,7 @@
 
 for app in nova glance keystone quantum swift
 do
-mysql -uroot -proot00 -v -e "
+sudo mysql -uroot -proot00 -v -e "
 CREATE DATABASE ${app};
 CREATE USER ${app}db;
 GRANT ALL PRIVILEGES ON ${app}.* TO '${app}db'@'%';
