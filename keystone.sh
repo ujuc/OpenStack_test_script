@@ -29,12 +29,12 @@ DEMO_USER=$(get_id keystone user-create --name demo --pass demo --email demo@foo
 
 NOVA_USER=$(get_id keystone user-create --name nova --pass nova --email nova@foo.kr)
 GLANCE_USER=$(get_id keystone user-create --name glance --pass glance  --email glance@foo.kr)
-SWIFT_USER=$(get_id keystone user-create --name swift --pass swift --email=swift@foo.kr)
-QUANTUM_USER=$(get_id keystone user-create --name quantum --pass quantum --email=quantum@foo.kr)
+SWIFT_USER=$(get_id keystone user-create --name swift --pass swift --email swift@foo.kr)
+QUANTUM_USER=$(get_id keystone user-create --name quantum --pass quantum --email quantum@foo.kr)
 
 # Roles
-ADMIN_ROLE=$(get_id keystone role-create --name=admin)
-MEMBER_ROLE=$(get_id keystone role-create --name=Member)
+ADMIN_ROLE=$(get_id keystone role-create --name admin)
+MEMBER_ROLE=$(get_id keystone role-create --name Member)
 
 # Add Roles to Users in Tenants (Essex)
 keystone user-role-add --user $ADMIN_USER --role $ADMIN_ROLE --tenant_id $ADMIN_TENANT
@@ -52,9 +52,9 @@ keystone service-create --name nova --type compute --description "OpenStack Comp
 keystone service-create --name volume --type volume --description "OpenStack Volume Service"
 keystone service-create --name glance --type image --description "OpenStack Image Service"
 keystone service-create --name swift --type object-store --description "OpenStack Storage Service"
-keystone service-create --name keystone --type identity --description="OpenStack Identity Service"
-keystone service-create --name=quantum --type=network --description="OpenStack Network Service"
-keystone service-create --name=ec2 --type=ec2 --description="EC2 Service"
+keystone service-create --name keystone --type identity --description "OpenStack Identity Service"
+keystone service-create --name quantum --type network --description "OpenStack Network Service"
+keystone service-create --name ec2 --type ec2 --description "EC2 Service"
 
 # list view
 echo "tenant list"
