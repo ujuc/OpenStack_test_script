@@ -11,3 +11,5 @@ echo "role list"
 keystone role-list
 echo "service list"
 keystone service-list
+echo "endpoint list"
+keystone endpoint-list
