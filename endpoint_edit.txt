@@ -2,43 +2,43 @@
 # Edit Server ip, service id
 
 # Service nova endpoint
-keystone endpoint-create --region myregion --service 094f301ce64c4214b2ae02e90ed20340 \
+keystone endpoint-create --region myregion --service-id 094f301ce64c4214b2ae02e90ed20340 \
 --publicurl 'http://10.0.2.15:8774/v2/$(tenant_id)s' \
 --adminurl 'http://10.0.2.15:8774/v2/$(tenant_id)s' \
 --internalurl 'http://10.0.2.15:8774/v2/$(tenant_id)s'
 
 # Service volume endpoint
-keystone endpoint-create --region myregion --service b7f9a6a838b940c18f0b54555f7af4a5 \
+keystone endpoint-create --region myregion --service-id b7f9a6a838b940c18f0b54555f7af4a5 \
 --publicurl 'http://10.0.2.15:8776/v1/$(tenant_id)s' \
 --adminurl 'http://10.0.2.15:8776/v1/$(tenant_id)s' \
 --internalurl 'http://10.0.2.15:8776/v1/$(tenant_id)s'
 
 # Service glance endpoint
-keystone endpoint-create --region myregion --service 24531925893844369ed9a1007230c915 \
+keystone endpoint-create --region myregion --service-id 24531925893844369ed9a1007230c915 \
 --publicurl 'http://10.0.2.15:9292/v1' \
 --adminurl 'http://10.0.2.15:9292/v1' \
 --internalurl 'http://10.0.2.15:9292/v1'
 
 # Service swift endpoint
-keystone endpoint-create --region myregion --service 5bfb030d0f004981a348f1c795f031c8 \
+keystone endpoint-create --region myregion --service-id 5bfb030d0f004981a348f1c795f031c8 \
 --publicurl 'http://10.0.2.15:8080/v1/AUTH_$(tenant_id)s' \
 --adminurl 'http://10.0.2.15:8080/v1' \
 --internalurl 'http://10.0.2.15:8080/v1/AUTH_$(tenant_id)s'
 
 # Service keystone endpoint
-keystone endpoint-create --region myregion --service ce1084af74244e77ba1d34f816f1b02d \
+keystone endpoint-create --region myregion --service-id ce1084af74244e77ba1d34f816f1b02d \
 --publicurl 'http://10.0.2.15:5000/v1' \
 --adminurl 'http://10.0.2.15:35357/v2.0' \
 --internalurl 'http://10.0.2.15:5000/2.0'
 
 # Service quantum endpoint
-keystone endpoint-create --region myregion --service 3b70a9457e034a6b870b6d57b7b257e4 \
+keystone endpoint-create --region myregion --service-id 3b70a9457e034a6b870b6d57b7b257e4 \
 --publicurl 'http://10.0.2.15:9696/' \
 --adminurl 'http://10.0.2.15:9696/' \
 --internalurl 'http://10.0.2.15:9696/'
 
 # Service ec2 endpoint
-keystone endpoint-create --region myregion --service fd0c00b1024f49e786323c174b013b4e \
+keystone endpoint-create --region myregion --service-id fd0c00b1024f49e786323c174b013b4e \
 --publicurl 'http://10.0.2.15:8773/services/Cloud' \
 --adminurl 'http://10.0.2.15:8773/services/Admin' \
 --internalurl 'http://10.0.2.15:8773/services/Cloud'
