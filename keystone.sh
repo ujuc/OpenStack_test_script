@@ -27,7 +27,7 @@ NOVA_USER=$(get_id keystone user-create --name nova --pass nova --email nova@foo
 GLANCE_USER=$(get_id keystone user-create --name glance --pass glance  --email glance@foo.kr)
 SWIFT_USER=$(get_id keystone user-create --name swift --pass swift --email swift@foo.kr)
 QUANTUM_USER=$(get_id keystone user-create --name quantum --pass quantum --email quantum@foo.kr)
-CINDER_USER=$(get_id keystone user-create --name cinder -pass cinder --email cinder@foo.kr)
+CINDER_USER=$(get_id keystone user-create --name cinder --pass cinder --email cinder@foo.kr)
 
 # Roles
 ADMIN_ROLE=$(get_id keystone role-create --name admin)
