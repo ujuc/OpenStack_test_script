@@ -69,8 +69,8 @@ create_endpoint () {
 }		
 
 for i in compute volume image object-store identity ec2 network; do
-	id=`mysql -h "$MYSQL_HOST" -u "$MYSQL_USER" -p "$MYSQL_PASSWORD" "$MYSQL_DATABASE" -ss -e "SELECT id FROM service WHERE type='"$1"';"` || exit 1
-	create_endpoint $1 $id
+#	id=`mysql -h "$MYSQL_HOST" -u "$MYSQL_USER" -p "$MYSQL_PASSWORD" "$MYSQL_DATABASE" -ss -e "SELECT id FROM service WHERE type='"$1"';"` || exit 1
+	create_endpoint $1 #$id
 done
 
 echo "service list"
