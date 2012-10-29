@@ -4,6 +4,7 @@
 #
 # Desciption: Create Service Endpoints
 
+
 # Mainly inspired by http://www.hastexo.com/resources/docs/installing-openstack-essex-20121-ubuntu-1204-precise-pangolin
 # Written by Martin Gerhard Loschwitz / Hastexo
 # Modified by Emilien Macchi /StackOps
