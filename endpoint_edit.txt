@@ -33,9 +33,9 @@ keystone endpoint-create --region myregion --service-id ce1084af74244e77ba1d34f8
 
 # Service quantum endpoint
 keystone endpoint-create --region myregion --service-id 3b70a9457e034a6b870b6d57b7b257e4 \
---publicurl 'http://10.0.2.15:9696/' \
---adminurl 'http://10.0.2.15:9696/' \
---internalurl 'http://10.0.2.15:9696/'
+--publicurl 'http://10.0.2.15:9696' \
+--adminurl 'http://10.0.2.15:9696' \
+--internalurl 'http://10.0.2.15:9696'
 
 # Service ec2 endpoint
 keystone endpoint-create --region myregion --service-id fd0c00b1024f49e786323c174b013b4e \
