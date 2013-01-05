@@ -11,3 +11,8 @@
 # Script 출처
 * [EmilienM / openstack-folsom-guide](https://github.com/EmilienM/openstack-folsom-guide)
 * [mseknibilel / OpenStack-Folsom-install-guide](https://github.com/mseknibilel/OpenStack-Folsom-Install-guide)
+
+# 작업해야될 것들.
+* Cinder 구축 관련된 내용들.
+* Endpoint 생성 스크립트의 활성화
+* 등등..
