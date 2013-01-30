@@ -6,7 +6,7 @@
 # 현 버전
 * Folsom을 우선 해두었다.
 * Cinder는 해보지 못해서 다른 문서들을 보고 작업을 함.
-* Essex도 작업을 해놔야되는데. 그쪽은 아직 Tag생성 방법을 알지 못하여... 작업을 못하고 있다. 우선 브런치로 빼내서 작업을 하고 확인을 할 예정.
+* Essex도 작업을 해놔야되는데. 우선 브런치로 빼내서 작업을 하고 확인을 할 예정.
 
 # Script 출처
 * [EmilienM / openstack-folsom-guide](https://github.com/EmilienM/openstack-folsom-guide)
